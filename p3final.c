@@ -1,46 +1,64 @@
-#include<stdio.h>
-int input_array_size()
+#include <stdio.h>
+#include <math.h>
+int
+input_n()
 {
-  int n;
-  printf("Enter the number of terms: ");
-  scanf("%d", &n);
-  return n;
-}
-void input_array(int n, int a[n])
-{
-  for(int i=0; i<n; i++)
-  {
-    printf("Enter a number: ");
-    scanf("%d", &a[i]);
-  }
+
+int n;
+
+printf("Enter a number:\n");
+
+scanf("%d", &n);
+
+return n;
+
 }
 
-int sum_n_arrays(int n, int a[n])
+
+int
+sum_n (int n)
 {
-  int sum=0;
-  for(int i=0; i<n; i++)
-  {
-    sum= sum + a[i];
-  }
-  return sum;
+
+int sum = 0, i;
+
+for (i = 0; i <= n; i++)
+{
+
+  sum = sum + i;
+}
+return sum;
+
 }
 
-void output(int n, int a[n], int sum)
+
+void
+output(int n, int sum)
 {
-for(int i=0; i<n-1; i++)
-{
-  printf("%d+", a[i]);
-}
-  printf("%d is %d", a[n-1], sum);
+
+  printf ("the sum of:\n");
+  int i;
+  for (i = 1; i < n; i++)
+  printf ("%d +", i);
+  printf("%d", n );
+  printf("numbers is %d",sum);
+
+
 }
 
-int main()
+
+int
+main()
 {
-    int n, sum;
-    n = input_array_size();
-    int a[n];
-    input_array(n, a);
-    sum = sum_n_arrays(n, a);
-    output(n, a, sum);
-    return 0;
+
+  int n, i, sum;
+
+  n = input_n ();
+
+  sum = sum_n (n);
+
+  output (n, sum);
+
+  return 0;
+
 }
+
